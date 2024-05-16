@@ -1,5 +1,7 @@
 # Music Album Project
 
+**Fecha de entrega:**	domingo, 19 de mayo de 2024, 23:00
+
 ## Descripción del Proyecto
 El objetivo de este proyecto es crear un software que permita a los usuarios gestionar información sobre álbumes de música. Esto incluye agregar nuevos álbumes con detalles básicos como nombre, año de lanzamiento, disquera y artistas, así como agregar canciones a los álbumes existentes con su título y duración. El sistema también debe garantizar que no se agreguen canciones con títulos repetidos a un álbum y permitir a los usuarios ver la lista de canciones de un álbum específico, junto con su duración. Además, se debe proporcionar la capacidad de buscar álbumes por año.
 
