@@ -1,0 +1,30 @@
+@startuml hola
+
+class ListaAlbum{
+  - listaAlbum: List<Album>
+  + visualizarAlbum(nombreAlbum: String): List<Cancion>
+  + buscarAlbumPorAnio(anioLanzamiento: int)
+}
+
+class Album {
+  - nombreAlbum: String
+  - anioLanzamientoAlbum: int
+  - disqueraAlbum: String
+  - artistasAlbum: List<String>
+  + addCancion(Cancion: Cancion)
+  + getCancion(): List<Cancion>
+  
+}
+
+class Cancion {
+  - tituloCancion: String
+  - duracionCancion: int
+}
+
+Album "1" -- "*" Cancion
+ListaAlbum "1" -- "*" Album
+
+note left of Album: No canciones con titulos repetidos
+
+
+@enduml
