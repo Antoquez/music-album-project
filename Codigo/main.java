@@ -4,7 +4,20 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * La clase main contiene el punto de entrada del programa y gestiona las interacciones del usuario con el sistema musical.
+ * 
+ * @see Album
+ * @see ListaAlbum
+ * @see Cancion 
+ */
 public class main {
+    
+    /**
+     * El método main es el punto de entrada del programa.
+     * 
+     * @param args Los argumentos de línea de comandos.
+     */
     public static void main(String[] args) {
         ListaAlbum listaAlbum = new ListaAlbum();
         Scanner scanner = new Scanner(System.in);
