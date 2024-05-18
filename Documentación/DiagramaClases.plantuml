@@ -1,32 +1,40 @@
 @startuml hola
 
-class ListaAlbum{
+class ListaAlbum {
   - listaAlbum: List<Album>
+  + ListaAlbum()
   + visualizarAlbum(nombreAlbum: String): List<Cancion>
-  + buscarAlbumPorAnio(anioLanzamiento: int)
+  + buscarAlbumPorAnio(anioLanzamiento: int): List<Cancion>
+  + addAlbum(album: Album): void
+  + obtenerAlbumPorNombre(nombreAlbum: String): Album
 }
 
 class Album {
   - nombreAlbum: String
-  - anioLanzamientoAlbum: int
-  - disqueraAlbum: String
-  - artistasAlbum: List<String>
-  + addCancion(Cancion: Cancion)
-  + getCancion(): List<Cancion>
-  
+  - anioLanzamiento: int
+  - disquera: String
+  - artistas: List<String>
+  + Album(nombreAlbum: String, anioLanzamiento: int, disquera: String, artistas: List<String>)
+  + addCancion(cancion: Cancion): void
+  + tieneTituloRepetido(cancion: Cancion, cancionAComparar: Cancion): Boolean
+  + getCanciones(): List<Cancion>
+  + getNombreAlbum(): String
+  + getAnioLanzamiento(): int
+  + getDisquera(): String
+  + getArtistas(): List<String>
 }
 
 class Cancion {
-  - tituloCancion: String
-  - duracionCancion: int
-  + getTituloCancion(): String
-  + getDuracionCancion(): int
+  - titulo: String
+  - duracion: int
+  + Cancion(titulo: String, duracion: int)
+  + getTitulo(): String
+  + getDuracion(): int
 }
 
 Album "1" -- "*" Cancion
 ListaAlbum "1" -- "*" Album
 
-note left of Album: No canciones con titulos repetidos
-
+note left of Album: No canciones con títulos repetidos
 
 @enduml
