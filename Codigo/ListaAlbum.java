@@ -29,4 +29,14 @@ class ListaAlbum {
     public void addAlbum(Album album) {
         listaAlbum.add(album);
     }
+
+    public Album obtenerAlbumPorNombre(String nombreAlbum) {
+        Album albumExistente = null;
+        for (Album album : listaAlbum) {
+            if (album.getNombreAlbum().equalsIgnoreCase(nombreAlbum)) {
+                albumExistente = album;
+            }
+        }
+        return albumExistente;
+    }
 }

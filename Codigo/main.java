@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         ListaAlbum listaAlbum = new ListaAlbum();
         Scanner scanner = new Scanner(System.in);
@@ -42,14 +42,7 @@ public class Main {
                     // HU2: Agregar una canción a un álbum existente
                     System.out.println("Ingrese el nombre del álbum al que desea agregar la canción:");
                     String nombreAlbumExistente = scanner.nextLine();
-                    Album albumExistente = null;
-
-                    for (Album album : listaAlbum.buscarAlbumPorAnio(anioLanzamiento)) {
-                        if (album.getNombreAlbum().equalsIgnoreCase(nombreAlbumExistente)) {
-                            albumExistente = album;
-                            break;
-                        }
-                    }
+                    Album albumExistente = listaAlbum.obtenerAlbumPorNombre(nombreAlbumExistente);
 
                     if (albumExistente != null) {
                         System.out.println("Ingrese el título de la canción:");
@@ -60,11 +53,13 @@ public class Main {
                         scanner.nextLine(); // Consume newline
 
                         Cancion nuevaCancion = new Cancion(tituloCancion, duracionSegundos);
-                        if(albumExistente.addCancion(nuevaCancion)){
-                        System.out.println("Canción agregada exitosamente.");
-                        }else{
-                            System.out.println("No se puede agregar canciones con título repetido");
-                        }
+                        try {
+                            albumExistente.addCancion(nuevaCancion);
+                            System.out.println("Canción agregada exitosamente.");
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());;
+                        }                        
+
                     } else {
                         System.out.println("Álbum no encontrado.");
                     }
@@ -105,7 +100,6 @@ public class Main {
                     break;
 
                 case 5:
-                    // Salir
                     System.out.println("Saliendo del sistema...");
                     scanner.close();
                     return;

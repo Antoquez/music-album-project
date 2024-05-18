@@ -19,13 +19,17 @@ class Album {
     }
 
     //Devuelve true si se añade la cancion correctamente
-    public boolean addCancion(Cancion cancion) {
+    public void addCancion(Cancion cancion) throws Exception{
         for (Cancion c : canciones) {
-            if (c.getTituloCancion().equalsIgnoreCase(cancion.getTituloCancion())) {
-                return false; // No agregar canciones con títulos repetidos
+            if (tieneTituloRepetido(cancion, c)) {
+                throw new Exception("No se puede agregar canciones con título repetido");
             }
         }
-        return canciones.add(cancion);
+        canciones.add(cancion);
+    }
+
+    private boolean tieneTituloRepetido(Cancion cancion, Cancion c) {
+        return c.getTituloCancion().equalsIgnoreCase(cancion.getTituloCancion());
     }
 
     public List<Cancion> getCanciones() {
