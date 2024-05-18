@@ -19,6 +19,8 @@ class Album {
 class Cancion {
   - tituloCancion: String
   - duracionCancion: int
+  + getTituloCancion(): String
+  + getDuracionCancion(): int
 }
 
 Album "1" -- "*" Cancion
