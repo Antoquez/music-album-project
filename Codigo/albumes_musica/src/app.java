@@ -1,17 +1,17 @@
-package Codigo;
+package Codigo.albumes_musica.src;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 /**
- * La clase main contiene el punto de entrada del programa y gestiona las interacciones del usuario con el sistema musical.
+ * La clase app contiene el punto de entrada del programa y gestiona las interacciones del usuario con el sistema musical.
  * 
  * @see Album
  * @see ListaAlbum
  * @see Cancion 
  */
-public class main {
+public class app {
     
     /**
      * El método main es el punto de entrada del programa.

@@ -1,4 +1,4 @@
-package Codigo;
+package Codigo.albumes_musica.src;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * 
  * @see Album
  */
-class ListaAlbum {
+public class ListaAlbum {
     private List<Album> listaAlbum;
 
     /**

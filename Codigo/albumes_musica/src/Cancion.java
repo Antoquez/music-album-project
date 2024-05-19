@@ -1,11 +1,11 @@
-package Codigo;
+package Codigo.albumes_musica.src;
 
 /**
  * La clase Cancion representa una canción con un título y una duración.
  * 
  * @see Album
  */
-class Cancion {
+public class Cancion {
     private String tituloCancion;
     private int duracionCancion; // duración en segundos
 
